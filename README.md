@@ -1,28 +1,34 @@
-<<<<<<< HEAD
+
 # Ruby-On-Rails-Coding-Assessment
-=======
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Build a simple rails application that consists of a receptionist portal & doctor portal which performs the following tasks,
+- A single login page for both portals.
+- Receptionists can register a new patient & perform CRUD operations.
+- Doctors can view registered patients & view the graph that represents the number of patients registered vs days.
 
-Things you may want to cover:
+```
+rails new hospital_app -d postgresql
+cd hospital_app
+```
 
-* Ruby version
+## Generate models
 
-* System dependencies
+```
+rails g model User email:string password_digest:string role:string
+rails g model Patient name:string age:integer gender:string
+```
 
-* Configuration
+```
+rails g controller Users
+rails g controller Sessions
+rails g controller Patients
+rails g controller Dashboard
+```
 
-* Database creation
+## Run on local machine
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
->>>>>>> master
+```
+rails server
+```

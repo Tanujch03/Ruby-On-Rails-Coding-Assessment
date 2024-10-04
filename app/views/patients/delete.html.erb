@@ -1,0 +1,7 @@
+<% if @patient&.persisted? %>
+  <%= button_to 'Delete Patient', 
+                patient_path(@patient), 
+                method: :delete, 
+                data: { confirm: 'Are you sure you want to delete this patient?' },
+                class: 'delete-button' %>
+<% end %>

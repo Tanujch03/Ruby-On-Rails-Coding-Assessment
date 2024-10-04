@@ -1,0 +1,21 @@
+<!-- app/views/dashboard/index.html.erb -->
+<h1>Dashboard</h1>
+
+<% if current_user.role == 'receptionist' %>
+  <h2>Receptionist Portal</h2>
+  <%= link_to 'Register New Patient', new_patient_path %>
+  <%= link_to 'View All Patients', patients_path %>
+<% elsif current_user.role == 'doctor' %>
+  <h2>Doctor Portal</h2>
+  <h3>Registered Patients</h3>
+  <ul>
+    <% @patients.each do |patient| %>
+      <li><%= link_to patient.name, patient_path(patient) %></li>
+    <% end %>
+  </ul>
+
+  <h3>Patient Registration Graph</h3>
+  <%= line_chart @patient_count_by_day, xtitle: "Date", ytitle: "Number of Patients" %>
+<% end %>
+
+<%= link_to 'Logout', logout_path %>

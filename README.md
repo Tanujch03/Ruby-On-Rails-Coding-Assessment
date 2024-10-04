@@ -8,9 +8,9 @@ Build a simple rails application that consists of a receptionist portal & doctor
 - Receptionists can register a new patient & perform CRUD operations.
 - Doctors can view registered patients & view the graph that represents the number of patients registered vs days.
 
+## Clone the repo
 ```
-rails new hospital_app -d postgresql
-cd hospital_app
+https://github.com/Tanujch03/Ruby-On-Rails-Coding-Assessment.git
 ```
 
 ## Generate models

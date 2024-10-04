@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: postgres
+  password: Kedarnath@03
+  host: localhost
+  port: 5432
+  database: hospital_management
+
+development:
+  <<: *default
+  database: hospital_app_development
+
+test:
+  <<: *default
+  database: hospital_app_test
+
+production:
+  <<: *default
+  database: hospital_app_production
+  username: hospital_app
+  password: <%= ENV["CLINIC_APP_DATABASE_PASSWORD"] %>
+  host: <%= ENV["DATABASE_HOST"] %>  # Ensure this is defined

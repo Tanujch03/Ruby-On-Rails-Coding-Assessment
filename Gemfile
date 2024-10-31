@@ -58,7 +58,7 @@ end
 gem 'bcrypt'
 gem 'chartkick'
 gem 'groupdate'
-gem 'bootstrap', '~> 5.0.2'
+gem 'bootstrap', '~> 5.3.3'
 gem "tailwindcss-rails"
 
 
